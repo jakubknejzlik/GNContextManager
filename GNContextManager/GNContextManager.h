@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <CWLSynthesizeSingleton/CWLSynthesizeSingleton.h>
 
 @interface GNContextManager : NSObject
+//CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
+
 @property (nonatomic,copy) NSString *defaultManagedObjectContextKey;
 @property (nonatomic,copy) NSString *defaultManagedObjectModelPath;
 @property (nonatomic,copy) NSURL *defaultPersistentStoreURL;
 @property (nonatomic,copy) NSString *defaultPersistentStoreType;
 @property BOOL canResetPersistentStoreOnFail;
 
-+(GNContextManager *)sharedInstance;
++(instancetype)sharedInstance;
 
 -(NSManagedObjectContext *)defaultManagedObjectContext;
 -(NSManagedObjectContext *)temporaryManagedObjectContext;

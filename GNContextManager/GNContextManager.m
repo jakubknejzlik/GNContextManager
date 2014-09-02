@@ -8,6 +8,7 @@
 
 #import "GNContextManager.h"
 
+
 @interface GNContextManager (){
     NSMutableDictionary *_managedObjectContexts;
     NSMutableDictionary *_managedObjectModels;
@@ -17,7 +18,7 @@
 
 
 @implementation GNContextManager
-//SYNTHESIZE_SINGLETON_FOR_ARC_CLASS(GNContextManager)
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstance);
 
 -(NSString *)defaultManagedObjectContextKey{
     if(!_defaultManagedObjectContextKey)return @"default";
@@ -304,7 +305,9 @@
     id obj=[self objectWithName:entityName ID:ID];
     if(!obj){
         obj=[self createObjectWithName:entityName];
-        [obj performSelector:@selector(setId:) withObject:ID];
+        if([obj respondsToSelector:@selector(setId:)]){
+            [obj performSelector:@selector(setId:) withObject:ID];
+        }
     }
     return obj;    
 }
