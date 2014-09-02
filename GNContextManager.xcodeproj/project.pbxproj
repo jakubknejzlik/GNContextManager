@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A9CD8CD17B14CD7B0F331F4 /* libPods-GNContextManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 975D9508F9AF49A1AD0DEE1B /* libPods-GNContextManager.a */; };
 		EEF6A2C919B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
-		EEF6A2CE19B6172A00D04F3E /* GNContextManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */; };
-		EEF6A2D019B6172A00D04F3E /* GNContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */; };
 		EEF6A2D719B6172A00D04F3E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2D619B6172A00D04F3E /* XCTest.framework */; };
 		EEF6A2D819B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
 		EEF6A2DA19B6172A00D04F3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2D919B6172A00D04F3E /* UIKit.framework */; };
 		EEF6A2DD19B6172A00D04F3E /* libGNContextManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */; };
 		EEF6A2E319B6172A00D04F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEF6A2E119B6172A00D04F3E /* InfoPlist.strings */; };
 		EEF6A2E519B6172A00D04F3E /* GNContextManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6A2E419B6172A00D04F3E /* GNContextManagerTests.m */; };
+		EEF6A2F219B6175B00D04F3E /* GNContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6A2F119B6175B00D04F3E /* GNContextManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,24 +35,25 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EEF6A2CE19B6172A00D04F3E /* GNContextManager.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A90319508EC40A18EBFCAAC /* Pods-GNContextManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNContextManager.xcconfig"; path = "Pods/Pods-GNContextManager.xcconfig"; sourceTree = "<group>"; };
+		975D9508F9AF49A1AD0DEE1B /* libPods-GNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GNContextManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGNContextManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF6A2C819B6172A00D04F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEF6A2CC19B6172A00D04F3E /* GNContextManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNContextManager-Prefix.pch"; sourceTree = "<group>"; };
-		EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNContextManager.h; sourceTree = "<group>"; };
-		EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNContextManager.m; sourceTree = "<group>"; };
 		EEF6A2D519B6172A00D04F3E /* GNContextManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNContextManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF6A2D619B6172A00D04F3E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EEF6A2D919B6172A00D04F3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EEF6A2E019B6172A00D04F3E /* GNContextManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNContextManagerTests-Info.plist"; sourceTree = "<group>"; };
 		EEF6A2E219B6172A00D04F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEF6A2E419B6172A00D04F3E /* GNContextManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNContextManagerTests.m; sourceTree = "<group>"; };
+		EEF6A2F019B6175B00D04F3E /* GNContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNContextManager.h; sourceTree = "<group>"; };
+		EEF6A2F119B6175B00D04F3E /* GNContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNContextManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF6A2C919B6172A00D04F3E /* Foundation.framework in Frameworks */,
+				4A9CD8CD17B14CD7B0F331F4 /* libPods-GNContextManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,7 @@
 				EEF6A2DE19B6172A00D04F3E /* GNContextManagerTests */,
 				EEF6A2C719B6172A00D04F3E /* Frameworks */,
 				EEF6A2C619B6172A00D04F3E /* Products */,
+				8A90319508EC40A18EBFCAAC /* Pods-GNContextManager.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +106,7 @@
 				EEF6A2C819B6172A00D04F3E /* Foundation.framework */,
 				EEF6A2D619B6172A00D04F3E /* XCTest.framework */,
 				EEF6A2D919B6172A00D04F3E /* UIKit.framework */,
+				975D9508F9AF49A1AD0DEE1B /* libPods-GNContextManager.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,8 +114,8 @@
 		EEF6A2CA19B6172A00D04F3E /* GNContextManager */ = {
 			isa = PBXGroup;
 			children = (
-				EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */,
-				EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */,
+				EEF6A2F019B6175B00D04F3E /* GNContextManager.h */,
+				EEF6A2F119B6175B00D04F3E /* GNContextManager.m */,
 				EEF6A2CB19B6172A00D04F3E /* Supporting Files */,
 			);
 			path = GNContextManager;
@@ -150,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF6A2E819B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManager" */;
 			buildPhases = (
+				3C489CD38B814C98A15DF445 /* Check Pods Manifest.lock */,
 				EEF6A2C119B6172A00D04F3E /* Sources */,
 				EEF6A2C219B6172A00D04F3E /* Frameworks */,
 				EEF6A2C319B6172A00D04F3E /* CopyFiles */,
+				B50CCB1AEEAB4F878CAF465D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +225,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C489CD38B814C98A15DF445 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B50CCB1AEEAB4F878CAF465D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-GNContextManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EEF6A2C119B6172A00D04F3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF6A2D019B6172A00D04F3E /* GNContextManager.m in Sources */,
+				EEF6A2F219B6175B00D04F3E /* GNContextManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +367,7 @@
 		};
 		EEF6A2E919B6172A00D04F3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A90319508EC40A18EBFCAAC /* Pods-GNContextManager.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GNContextManager.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -340,6 +380,7 @@
 		};
 		EEF6A2EA19B6172A00D04F3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A90319508EC40A18EBFCAAC /* Pods-GNContextManager.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GNContextManager.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -405,6 +446,7 @@
 				EEF6A2EA19B6172A00D04F3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EEF6A2EB19B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +455,7 @@
 				EEF6A2ED19B6172A00D04F3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
