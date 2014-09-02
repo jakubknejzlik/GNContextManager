@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEF6A2C919B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
+		EEF6A2CE19B6172A00D04F3E /* GNContextManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */; };
+		EEF6A2D019B6172A00D04F3E /* GNContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */; };
+		EEF6A2D719B6172A00D04F3E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2D619B6172A00D04F3E /* XCTest.framework */; };
+		EEF6A2D819B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
+		EEF6A2DA19B6172A00D04F3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2D919B6172A00D04F3E /* UIKit.framework */; };
+		EEF6A2DD19B6172A00D04F3E /* libGNContextManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */; };
+		EEF6A2E319B6172A00D04F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEF6A2E119B6172A00D04F3E /* InfoPlist.strings */; };
+		EEF6A2E519B6172A00D04F3E /* GNContextManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6A2E419B6172A00D04F3E /* GNContextManagerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEF6A2DB19B6172A00D04F3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEF6A2BD19B6172A00D04F3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEF6A2C419B6172A00D04F3E;
+			remoteInfo = GNContextManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEF6A2C319B6172A00D04F3E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				EEF6A2CE19B6172A00D04F3E /* GNContextManager.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGNContextManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF6A2C819B6172A00D04F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EEF6A2CC19B6172A00D04F3E /* GNContextManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNContextManager-Prefix.pch"; sourceTree = "<group>"; };
+		EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNContextManager.h; sourceTree = "<group>"; };
+		EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNContextManager.m; sourceTree = "<group>"; };
+		EEF6A2D519B6172A00D04F3E /* GNContextManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNContextManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF6A2D619B6172A00D04F3E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EEF6A2D919B6172A00D04F3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EEF6A2E019B6172A00D04F3E /* GNContextManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNContextManagerTests-Info.plist"; sourceTree = "<group>"; };
+		EEF6A2E219B6172A00D04F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEF6A2E419B6172A00D04F3E /* GNContextManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNContextManagerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEF6A2C219B6172A00D04F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF6A2C919B6172A00D04F3E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF6A2D219B6172A00D04F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF6A2DD19B6172A00D04F3E /* libGNContextManager.a in Frameworks */,
+				EEF6A2D719B6172A00D04F3E /* XCTest.framework in Frameworks */,
+				EEF6A2DA19B6172A00D04F3E /* UIKit.framework in Frameworks */,
+				EEF6A2D819B6172A00D04F3E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEF6A2BC19B6172A00D04F3E = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2CA19B6172A00D04F3E /* GNContextManager */,
+				EEF6A2DE19B6172A00D04F3E /* GNContextManagerTests */,
+				EEF6A2C719B6172A00D04F3E /* Frameworks */,
+				EEF6A2C619B6172A00D04F3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEF6A2C619B6172A00D04F3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */,
+				EEF6A2D519B6172A00D04F3E /* GNContextManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEF6A2C719B6172A00D04F3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2C819B6172A00D04F3E /* Foundation.framework */,
+				EEF6A2D619B6172A00D04F3E /* XCTest.framework */,
+				EEF6A2D919B6172A00D04F3E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEF6A2CA19B6172A00D04F3E /* GNContextManager */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2CD19B6172A00D04F3E /* GNContextManager.h */,
+				EEF6A2CF19B6172A00D04F3E /* GNContextManager.m */,
+				EEF6A2CB19B6172A00D04F3E /* Supporting Files */,
+			);
+			path = GNContextManager;
+			sourceTree = "<group>";
+		};
+		EEF6A2CB19B6172A00D04F3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2CC19B6172A00D04F3E /* GNContextManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EEF6A2DE19B6172A00D04F3E /* GNContextManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2E419B6172A00D04F3E /* GNContextManagerTests.m */,
+				EEF6A2DF19B6172A00D04F3E /* Supporting Files */,
+			);
+			path = GNContextManagerTests;
+			sourceTree = "<group>";
+		};
+		EEF6A2DF19B6172A00D04F3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6A2E019B6172A00D04F3E /* GNContextManagerTests-Info.plist */,
+				EEF6A2E119B6172A00D04F3E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEF6A2C419B6172A00D04F3E /* GNContextManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF6A2E819B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManager" */;
+			buildPhases = (
+				EEF6A2C119B6172A00D04F3E /* Sources */,
+				EEF6A2C219B6172A00D04F3E /* Frameworks */,
+				EEF6A2C319B6172A00D04F3E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GNContextManager;
+			productName = GNContextManager;
+			productReference = EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EEF6A2D419B6172A00D04F3E /* GNContextManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF6A2EB19B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManagerTests" */;
+			buildPhases = (
+				EEF6A2D119B6172A00D04F3E /* Sources */,
+				EEF6A2D219B6172A00D04F3E /* Frameworks */,
+				EEF6A2D319B6172A00D04F3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEF6A2DC19B6172A00D04F3E /* PBXTargetDependency */,
+			);
+			name = GNContextManagerTests;
+			productName = GNContextManagerTests;
+			productReference = EEF6A2D519B6172A00D04F3E /* GNContextManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEF6A2BD19B6172A00D04F3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jakub Knejzlik";
+			};
+			buildConfigurationList = EEF6A2C019B6172A00D04F3E /* Build configuration list for PBXProject "GNContextManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EEF6A2BC19B6172A00D04F3E;
+			productRefGroup = EEF6A2C619B6172A00D04F3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEF6A2C419B6172A00D04F3E /* GNContextManager */,
+				EEF6A2D419B6172A00D04F3E /* GNContextManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEF6A2D319B6172A00D04F3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF6A2E319B6172A00D04F3E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEF6A2C119B6172A00D04F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF6A2D019B6172A00D04F3E /* GNContextManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF6A2D119B6172A00D04F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF6A2E519B6172A00D04F3E /* GNContextManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEF6A2DC19B6172A00D04F3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEF6A2C419B6172A00D04F3E /* GNContextManager */;
+			targetProxy = EEF6A2DB19B6172A00D04F3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEF6A2E119B6172A00D04F3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEF6A2E219B6172A00D04F3E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEF6A2E619B6172A00D04F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EEF6A2E719B6172A00D04F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEF6A2E919B6172A00D04F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GNContextManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNContextManager/GNContextManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EEF6A2EA19B6172A00D04F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GNContextManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNContextManager/GNContextManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EEF6A2EC19B6172A00D04F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNContextManager/GNContextManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GNContextManagerTests/GNContextManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EEF6A2ED19B6172A00D04F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNContextManager/GNContextManager-Prefix.pch";
+				INFOPLIST_FILE = "GNContextManagerTests/GNContextManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEF6A2C019B6172A00D04F3E /* Build configuration list for PBXProject "GNContextManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF6A2E619B6172A00D04F3E /* Debug */,
+				EEF6A2E719B6172A00D04F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEF6A2E819B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF6A2E919B6172A00D04F3E /* Debug */,
+				EEF6A2EA19B6172A00D04F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EEF6A2EB19B6172A00D04F3E /* Build configuration list for PBXNativeTarget "GNContextManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF6A2EC19B6172A00D04F3E /* Debug */,
+				EEF6A2ED19B6172A00D04F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEF6A2BD19B6172A00D04F3E /* Project object */;
+}
