@@ -11,15 +11,13 @@
 #import <CWLSynthesizeSingleton/CWLSynthesizeSingleton.h>
 
 @interface GNContextManager : NSObject
-//CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
+CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 
 @property (nonatomic,copy) NSString *defaultManagedObjectContextKey;
 @property (nonatomic,copy) NSString *defaultManagedObjectModelPath;
 @property (nonatomic,copy) NSURL *defaultPersistentStoreURL;
 @property (nonatomic,copy) NSString *defaultPersistentStoreType;
 @property BOOL canResetPersistentStoreOnFail;
-
-+(instancetype)sharedInstance;
 
 -(NSManagedObjectContext *)defaultManagedObjectContext;
 -(NSManagedObjectContext *)temporaryManagedObjectContext;
@@ -83,7 +81,6 @@
 
 +(void)saveDataInContext:(void(^)(NSManagedObjectContext *context))saveBlock error:(NSError **)error;
 +(void)saveDataInBackgroundContext:(void(^)(NSManagedObjectContext *context))saveBlock completion:(void(^)(NSError *error))completion;
-+(void)saveDataInBackgroundContextWithCompletion:(void(^)(NSManagedObjectContext *context,void (^completion)(NSError *error)))saveBlock completion:(void(^)(NSError *error))completion;
 
 -(void)startObservingContext:(NSManagedObjectContext *)context;
 -(void)stopObservingContext:(NSManagedObjectContext *)context;
@@ -93,10 +90,10 @@
  */
 -(void)deleteAllObjects;
 -(void)deleteObjectsWithName:(NSString *)name;
+
 /**
  * these methos DOES perform save
  */
 +(void)deleteAllObjectsInBackgroundWithCompletionHandler:(void(^)(NSError *error))completionHandler;
-+(void)deleteObjectsWithName:(NSString *)name inBackgroundWithCompletionHandler:(void(^)(NSError *error))completionHandler;
 
 @end

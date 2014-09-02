@@ -121,7 +121,6 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
     NSManagedObjectContext *context = key?[_managedObjectContexts objectForKey:key]:nil;
     
     if(!context){
-        NSLog(@"creating context %@",key);
         NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinatorWithStoreAtURL:persistentStoreURL withType:persistentStoreType managedObjectModel:model];
         if (coordinator != nil)
         {
@@ -341,50 +340,6 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
         });
     });
 }
-+(void)saveDataInBackgroundContextWithCompletion:(void(^)(NSManagedObjectContext *context,void (^completion)(NSError *error)))saveBlock completion:(void (^)(NSError *))completion{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND,0), ^{
-        @synchronized(self){
-//            NSThread *thread = [NSThread currentThread];
-            NSManagedObjectContext *context=[[GNContextManager sharedInstance] temporaryManagedObjectContext];
-            [context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-            NSManagedObjectContext *defaultContext=[[GNContextManager sharedInstance] defaultManagedObjectContext];
-            [defaultContext setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
-            [defaultContext startObservingContext:context];
-            
-            __block BOOL completed = NO;
-            
-            void (^_completion)(NSError *error) = ^(NSError *error){
-                __weak NSError *weakError = error;
-//                [context performSelector:@selector(nsk_performBlock:) onThread:thread withObject:[^(){
-                    //                __block NSError *error;
-                    NSError *err;
-                    if (!weakError && [context hasChanges]) {
-                        [context save:&err];
-                        NSLog(@"context saved with error %@",err);
-                    }
-                    [defaultContext stopObservingContext:context];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        completed = YES;
-                        completion(weakError?weakError:err);
-                    });
-//                } copy] waitUntilDone:NO];
-            };
-            
-            @synchronized(context){
-                saveBlock(context,_completion);
-            }
-//            
-//            NSRunLoop *loop = [NSRunLoop currentRunLoop];
-//            while (!completed) {
-//                [loop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-//            }
-        }
-    });
-}
-
-//-(void)nsk_performBlock:(void(^)(void))block{
-//    block();
-//}
 
 -(void)startObservingContext:(NSManagedObjectContext *)context{
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter]; 
@@ -421,34 +376,5 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
         [context deleteAllObjects];
     } completion:completionHandler];
 }
-+(void)deleteObjectsWithName:(NSString *)name inBackgroundWithCompletionHandler:(void(^)(NSError *error))completionHandler{
-    [self saveDataInBackgroundContext:^(NSManagedObjectContext *context) {
-        [context deleteObjectsWithName:name];
-    } completion:completionHandler];
-}
 
 @end
-
-
-//dispatch_queue_t background_save_queue(void);
-//void cleanup_save_queue(void);
-//
-//static dispatch_queue_t coredata_background_save_queue;
-//
-//dispatch_queue_t background_save_queue()
-//{
-//    if (coredata_background_save_queue == NULL)
-//    {
-//        coredata_background_save_queue = dispatch_queue_create("com.thefuntasty.backgroundsaves", 0);
-//    }
-//    return coredata_background_save_queue;
-//}
-//
-//void cleanup_save_queue()
-//{
-//	if (coredata_background_save_queue != NULL)
-//	{
-//		dispatch_release(coredata_background_save_queue);
-//        coredata_background_save_queue = NULL;
-//	}
-//}
