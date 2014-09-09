@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
   s.source       = { :git => "https://github.com/jakubknejzlik/GNContextManager.git", :tag => "0.0.3" }
   s.source_files  = "GNContextManager/*.{h,m}"
-  s.frameworks = "UIKit"
+  s.frameworks = "UIKit","CoreData"
   s.requires_arc = true
   s.dependency "CWLSynthesizeSingleton"
 end
