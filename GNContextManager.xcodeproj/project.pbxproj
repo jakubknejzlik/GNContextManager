@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		8A90319508EC40A18EBFCAAC /* Pods-GNContextManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNContextManager.xcconfig"; path = "Pods/Pods-GNContextManager.xcconfig"; sourceTree = "<group>"; };
 		975D9508F9AF49A1AD0DEE1B /* libPods-GNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GNContextManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE03D68919EC0A9700F729BB /* GNContextManager.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GNContextManager.podspec; sourceTree = "<group>"; };
 		EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGNContextManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF6A2C819B6172A00D04F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEF6A2CC19B6172A00D04F3E /* GNContextManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNContextManager-Prefix.pch"; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		EEF6A2BC19B6172A00D04F3E = {
 			isa = PBXGroup;
 			children = (
+				EE03D68919EC0A9700F729BB /* GNContextManager.podspec */,
 				EEF6A2CA19B6172A00D04F3E /* GNContextManager */,
 				EEF6A2DE19B6172A00D04F3E /* GNContextManagerTests */,
 				EEF6A2C719B6172A00D04F3E /* Frameworks */,

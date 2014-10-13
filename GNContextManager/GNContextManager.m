@@ -297,16 +297,14 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 -(id)objectWithName:(NSString *)entityName hashID:(NSString *)hashID{
     return [[self objectsWithName:entityName predicate:[NSPredicate predicateWithFormat:@"hashID = %@",hashID,nil]] lastObject];
 }
--(id)objectWithName:(NSString *)entityName ID:(NSString *)ID{
-    return [[self objectsWithName:entityName predicate:[NSPredicate predicateWithFormat:@"id = %@",ID,nil]] lastObject];
+-(id)objectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName{
+    return [[self objectsWithName:entityName predicate:[NSPredicate predicateWithFormat:@"%@ = %@",attributeName,ID,nil]] lastObject];
 }
--(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID{
-    id obj=[self objectWithName:entityName ID:ID];
+-(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName{
+    id obj=[self objectWithName:entityName ID:ID attributeName:attributeName];
     if(!obj){
         obj=[self createObjectWithName:entityName];
-        if([obj respondsToSelector:@selector(setId:)]){
-            [obj performSelector:@selector(setId:) withObject:ID];
-        }
+        [obj setValue:ID forKey:attributeName];
     }
     return obj;    
 }

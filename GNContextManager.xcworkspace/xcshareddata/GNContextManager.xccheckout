@@ -10,29 +10,29 @@
 	<string>GNContextManager</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F04CDDA4-C655-4450-A677-BCE93C748AA1</key>
+		<key>89F43E5A016575B3C6EAC8200B45E68BC0A99E1B</key>
 		<string>https://github.com/jakubknejzlik/GNContextManager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GNContextManager.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F04CDDA4-C655-4450-A677-BCE93C748AA1</key>
+		<key>89F43E5A016575B3C6EAC8200B45E68BC0A99E1B</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jakubknejzlik/GNContextManager.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F04CDDA4-C655-4450-A677-BCE93C748AA1</string>
+	<string>89F43E5A016575B3C6EAC8200B45E68BC0A99E1B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F04CDDA4-C655-4450-A677-BCE93C748AA1</string>
+			<string>89F43E5A016575B3C6EAC8200B45E68BC0A99E1B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GNContextManager</string>
 		</dict>

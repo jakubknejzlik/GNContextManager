@@ -76,8 +76,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 #endif
 
 -(id)objectWithName:(NSString *)entityName hashID:(NSString *)hashID;
--(id)objectWithName:(NSString *)entityName ID:(NSString *)ID;
--(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID;
+-(id)objectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName;
+-(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName;
 
 +(void)saveDataInContext:(void(^)(NSManagedObjectContext *context))saveBlock error:(NSError **)error;
 +(void)saveDataInBackgroundContext:(void(^)(NSManagedObjectContext *context))saveBlock completion:(void(^)(NSError *error))completion;
