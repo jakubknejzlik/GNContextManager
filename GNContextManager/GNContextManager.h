@@ -75,7 +75,6 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 -(NSFetchedResultsController *)fetchedResultsControllerWithName:(NSString *)entityName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors sectionNameKeyPath:(NSString *)sectionNameKeyPath cacheName:(NSString *)cacheName;
 #endif
 
--(id)objectWithName:(NSString *)entityName hashID:(NSString *)hashID;
 -(id)objectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName;
 -(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName;
 
