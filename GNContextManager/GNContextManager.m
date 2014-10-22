@@ -294,10 +294,10 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 #endif
 
 
--(id)objectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName{
+-(id)objectWithName:(NSString *)entityName ID:(id)ID attributeName:(NSString *)attributeName{
     return [[self objectsWithName:entityName predicate:[NSPredicate predicateWithFormat:@"%K = %@",attributeName,ID,nil]] lastObject];
 }
--(id)createOrGetObjectWithName:(NSString *)entityName ID:(NSString *)ID attributeName:(NSString *)attributeName{
+-(id)createOrGetObjectWithName:(NSString *)entityName ID:(id)ID attributeName:(NSString *)attributeName{
     id obj=[self objectWithName:entityName ID:ID attributeName:attributeName];
     if(!obj){
         obj=[self createObjectWithName:entityName];
