@@ -124,7 +124,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
         NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinatorWithStoreAtURL:persistentStoreURL withType:persistentStoreType managedObjectModel:model];
         if (coordinator != nil)
         {
-            context = [[NSManagedObjectContext alloc] init];
+            context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
             [context setPersistentStoreCoordinator:coordinator];
             if(key){
                 [_managedObjectContexts setObject:context forKey:key];
@@ -220,6 +220,13 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 
 
 @implementation NSManagedObjectContext (Getters)
+
+-(NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{
+    NSManagedObjectContext *childContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:concurrencyType];
+    [childContext setParentContext:self];
+    return childContext;
+}
+
 
 -(id)createObjectWithName:(NSString *)entityName{
     return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self];

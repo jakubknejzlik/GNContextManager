@@ -55,6 +55,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 
 @interface NSManagedObjectContext (Getters)
 
+-(NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
+
 -(id)createObjectWithName:(NSString *)entityName;
 -(NSArray *)objectsWithName:(NSString *)entityName;
 -(NSArray *)objectsWithName:(NSString *)entityName predicate:(NSPredicate *)predicate;
