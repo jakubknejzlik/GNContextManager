@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GNContextManager"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "CoreData helper"
   s.description  = <<-DESC
                    Manager for helping with CoreData stuff
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Jakub Knejzlik" => "jakub.knejzlik@gmail.com" }
   s.platform     = :ios, "6.0"
-  s.source       = { :git => "https://github.com/jakubknejzlik/GNContextManager.git", :tag => "0.0.8" }
+  s.source       = { :git => "https://github.com/jakubknejzlik/GNContextManager.git", :tag => "0.0.9" }
   s.source_files  = "GNContextManager/*.{h,m}"
   s.frameworks = "UIKit","CoreData"
   s.requires_arc = true
