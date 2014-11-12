@@ -20,21 +20,31 @@
 @implementation GNContextManager
 CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstance);
 
+-(instancetype)initWithModelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType{
+    self = [super init];
+    if (self) {
+        self.managedObjectModelPath = modelPath;
+        self.persistentStoreURL = persistentStoreURL;
+        self.persistentStoreType = persistentStoreType;
+    }
+    return self;
+}
+
 -(NSString *)defaultManagedObjectContextKey{
     if(!_defaultManagedObjectContextKey)return @"default";
     return _defaultManagedObjectContextKey;
 }
--(NSString *)defaultManagedObjectModelPath{
-    if(!_defaultManagedObjectModelPath)return [[NSBundle mainBundle] pathForResource:@"Model" ofType:@"momd"];
-    return _defaultManagedObjectModelPath;
+-(NSString *)managedObjectModelPath{
+    if(!_managedObjectModelPath)return [[NSBundle mainBundle] pathForResource:@"Model" ofType:@"momd"];
+    return _managedObjectModelPath;
 }
--(NSURL *)defaultPersistentStoreURL{
-    if(!_defaultPersistentStoreURL)return [NSURL fileURLWithPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"MainDB.sqlite"]];
-    return _defaultPersistentStoreURL;
+-(NSURL *)persistentStoreURL{
+    if(!_persistentStoreURL)return [NSURL fileURLWithPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"MainDB.sqlite"]];
+    return _persistentStoreURL;
 }
--(NSString *)defaultPersistentStoreType{
-    if(!_defaultPersistentStoreType)return NSSQLiteStoreType;
-    return _defaultPersistentStoreType;
+-(NSString *)persistentStoreType{
+    if(!_persistentStoreType)return NSSQLiteStoreType;
+    return _persistentStoreType;
 }
 
 - (BOOL)saveDefaultContext{
@@ -54,15 +64,20 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
     return [self managedObjectContextForKey:self.defaultManagedObjectContextKey];
 }
 -(NSManagedObjectContext *)temporaryManagedObjectContext{
-    return [self managedObjectContextForKey:nil];
+    return [self temporaryManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType];
 }
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key
-{
-    return [self managedObjectContextForKey:key modelPath:self.defaultManagedObjectModelPath];
+-(NSManagedObjectContext *)temporaryManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{
+    return [self managedObjectContextForKey:nil concurrencyType:concurrencyType];
+}
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key{
+    return [self managedObjectContextForKey:key concurrencyType:NSMainQueueConcurrencyType];
+}
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{
+    return [self managedObjectContextForKey:key modelPath:self.managedObjectModelPath persistentStoreURL:self.persistentStoreURL persistentStoreType:self.persistentStoreType concurrencyType:concurrencyType];
 }
 
 
--(void)clearCache{
+-(void)flush{
     [_managedObjectContexts removeAllObjects];
     [_managedObjectModels removeAllObjects];
     [_persistentStoreCoordinators removeAllObjects];
@@ -76,46 +91,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
     [_managedObjectContexts removeObjectForKey:key];
 }
 
-
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath{
-    return [self defaultManagedObjectContextWithModelAtPath:modelPath persistentStoreURL:self.defaultPersistentStoreURL];
-}
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL{
-    return [self defaultManagedObjectContextWithModelAtPath:modelPath persistentStoreURL:persistentStoreURL persistentStoreType:self.defaultPersistentStoreType];
-}
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType{
-    return [self managedObjectContextForKey:self.defaultManagedObjectContextKey modelPath:modelPath persistentStoreURL:persistentStoreURL persistentStoreType:persistentStoreType];
-}
-
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath{
-    return [self temporaryManagedObjectContextWithModelAtPath:modelPath persistentStoreURL:self.defaultPersistentStoreURL];
-}
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL{
-    return [self temporaryManagedObjectContextWithModelAtPath:modelPath persistentStoreURL:persistentStoreURL persistentStoreType:self.defaultPersistentStoreType];
-}
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType{
-    return [self managedObjectContextForKey:nil modelPath:modelPath persistentStoreURL:persistentStoreURL persistentStoreType:persistentStoreType];
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{
+    return [self managedObjectContextForKey:key model:[self managedObjectModelWithPath:modelPath] persistentStoreURL:persistentStoreURL persistentStoreType:persistentStoreType concurrencyType:concurrencyType];
 }
 
 
-
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath{
-    return [self managedObjectContextForKey:key modelPath:modelPath persistentStoreURL:self.defaultPersistentStoreURL];
-}
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL{
-    return [self managedObjectContextForKey:key modelPath:modelPath persistentStoreURL:persistentStoreURL persistentStoreType:self.defaultPersistentStoreType];
-}
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType{
-    return [self managedObjectContextForKey:key model:[self managedObjectModelWithPath:modelPath] persistentStoreURL:persistentStoreURL persistentStoreType:persistentStoreType];
-}
-
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model{
-    return [self managedObjectContextForKey:key model:model persistentStoreURL:self.defaultPersistentStoreURL];
-}
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model persistentStoreURL:(NSURL *)persistentStoreURL{
-    return [self managedObjectContextForKey:key model:model persistentStoreURL:persistentStoreURL persistentStoreType:self.defaultPersistentStoreType];
-}
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType{
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{
     if(!_managedObjectContexts)_managedObjectContexts = [[NSMutableDictionary alloc] init];
     
     NSManagedObjectContext *context = key?[_managedObjectContexts objectForKey:key]:nil;
@@ -124,7 +105,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
         NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinatorWithStoreAtURL:persistentStoreURL withType:persistentStoreType managedObjectModel:model];
         if (coordinator != nil)
         {
-            context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+            context = [[NSManagedObjectContext alloc] initWithConcurrencyType:concurrencyType];
             [context setPersistentStoreCoordinator:coordinator];
             if(key){
                 [_managedObjectContexts setObject:context forKey:key];
@@ -138,10 +119,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
  Returns the managed object model for the application.
  If the model doesn't already exist, it is created from the application's model.
  */
-//- (NSManagedObjectModel *)defaultManagedObjectModel
-//{
-//    return [self managedObjectModelWithPath:self.defaultManagedObjectModelPath];
-//}
+
 - (NSManagedObjectModel *)managedObjectModelWithPath:(NSString *)path
 {
     if(!_managedObjectContexts)_managedObjectContexts = [[NSMutableDictionary alloc] init];
@@ -161,11 +139,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
  Returns the persistent store coordinator for the application.
  If the coordinator doesn't already exist, it is created and the application's store added to it.
  */
-//- (NSPersistentStoreCoordinator *)defaultPersistentStoreCoordinator{
-//    return [self persistentStoreCoordinatorWithFileAtURL:self.defaultPersistentStoreURL withType:self.defaultPersistentStoreType];
-//}
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreAtURL:(NSURL *)URL withType:(NSString *)type{
-    return [self persistentStoreCoordinatorWithStoreAtURL:URL withType:type managedObjectModelPath:self.defaultManagedObjectModelPath];
+    return [self persistentStoreCoordinatorWithStoreAtURL:URL withType:type managedObjectModelPath:self.managedObjectModelPath];
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStoreAtURL:(NSURL *)storeURL withType:(NSString *)type managedObjectModelPath:(NSString *)modelPath

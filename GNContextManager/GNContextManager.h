@@ -14,42 +14,24 @@
 CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 
 @property (nonatomic,copy) NSString *defaultManagedObjectContextKey;
-@property (nonatomic,copy) NSString *defaultManagedObjectModelPath;
-@property (nonatomic,copy) NSURL *defaultPersistentStoreURL;
-@property (nonatomic,copy) NSString *defaultPersistentStoreType;
+@property (nonatomic,copy) NSString *managedObjectModelPath;
+@property (nonatomic,copy) NSURL *persistentStoreURL;
+@property (nonatomic,copy) NSString *persistentStoreType;
 @property BOOL canResetPersistentStoreOnFail;
 
--(NSManagedObjectContext *)defaultManagedObjectContext;
--(NSManagedObjectContext *)temporaryManagedObjectContext;
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key;
+-(instancetype)initWithModelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType;
 
--(void)clearCache;
+-(NSManagedObjectContext *)defaultManagedObjectContext;
+
+-(NSManagedObjectContext *)temporaryManagedObjectContext;
+-(NSManagedObjectContext *)temporaryManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key;
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
+
+-(void)flush;
 
 -(void)destroyDefaultManagedObjectContext;
 -(void)destroyManagedObjectContextForKey:(NSString *)key;
-
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath;
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL;
--(NSManagedObjectContext *)defaultManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType;
-
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath;
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL;
--(NSManagedObjectContext *)temporaryManagedObjectContextWithModelAtPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType;
-
-
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath;
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL;
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType;
-
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model;
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model persistentStoreURL:(NSURL *)persistentStoreURL;
--(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key model:(NSManagedObjectModel *)model persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType;
-
-- (BOOL)saveDefaultContext;
-- (BOOL)saveContextWithKey:(NSString *)key error:(NSError **)error;
-- (NSString *)applicationDocumentsDirectory;
-
-
 
 @end
 
