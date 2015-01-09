@@ -122,9 +122,9 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 
 - (NSManagedObjectModel *)managedObjectModelWithPath:(NSString *)path
 {
-    if(!_managedObjectContexts)_managedObjectContexts = [[NSMutableDictionary alloc] init];
+    if(!_managedObjectModels)_managedObjectModels = [[NSMutableDictionary alloc] init];
 
-    NSManagedObjectModel *model = path?[_managedObjectContexts objectForKey:path]:nil;
+    NSManagedObjectModel *model = path?[_managedObjectModels objectForKey:path]:nil;
     
     if(!model){
         

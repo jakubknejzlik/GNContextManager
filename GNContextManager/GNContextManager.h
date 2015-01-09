@@ -28,6 +28,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager,sharedInstance);
 -(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key;
 -(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
 
+-(NSManagedObjectContext *)managedObjectContextForKey:(NSString *)key modelPath:(NSString *)modelPath persistentStoreURL:(NSURL *)persistentStoreURL persistentStoreType:(NSString *)persistentStoreType concurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;
+
 -(void)flush;
 
 -(void)destroyDefaultManagedObjectContext;
