@@ -33,6 +33,7 @@
 - (void)tearDown
 {
     [self.mainQueueContext deleteAllObjects];
+    [self.mainQueueContext save:nil];
     [super tearDown];
 }
 
