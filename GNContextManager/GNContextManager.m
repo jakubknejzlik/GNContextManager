@@ -40,7 +40,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
     return _persistentStoreCoordinators;
 }
 
--(NSManagedObjectContext *)mainManagedObjectContext{
+-(NSManagedObjectContext *)mainQueueManagedObjectContext{
     NSManagedObjectContext *context = [self.managedObjectContexts objectForKey:@"__default_context"];
     if (!context) {
         context = [self managedObjectContextWithSettings:[GNContextSettings mainQueueDefaultSettings]];

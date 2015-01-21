@@ -18,7 +18,7 @@
 +(instancetype)sharedInstance;
 
 
--(NSManagedObjectContext *)mainManagedObjectContext;
+-(NSManagedObjectContext *)mainQueueManagedObjectContext;
 
 -(NSManagedObjectContext *)managedObjectContextWithSettings:(GNContextSettings *)settings;
 
