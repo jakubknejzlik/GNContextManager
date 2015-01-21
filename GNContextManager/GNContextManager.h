@@ -18,6 +18,8 @@
 +(instancetype)sharedInstance;
 
 
+-(NSManagedObjectContext *)mainManagedObjectContext;
+
 -(NSManagedObjectContext *)managedObjectContextWithSettings:(GNContextSettings *)settings;
 
 
