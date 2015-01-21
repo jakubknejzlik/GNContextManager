@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37261F07D107425C87374BFD"
+               BlueprintIdentifier = "5483CD7C7E01683DA58394CE"
                BuildableName = "libPods-GNContextManager.a"
                BlueprintName = "Pods-GNContextManager"
                ReferencedContainer = "container:Pods.xcodeproj">

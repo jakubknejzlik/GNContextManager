@@ -6,6 +6,6 @@ pod "CWLSynthesizeSingleton"
 end
 
 target "GNContextManagerTests" do
-
+pod "CWLSynthesizeSingleton"
 end
 

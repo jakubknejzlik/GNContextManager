@@ -14,15 +14,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GNContextManagerTests-CWLSynthesizeSingleton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNContextManagerTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>37261F07D107425C87374BFD</key>
+		<key>016CADD5799C27DD12D422DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C8A34A42B2348E697DEA704</key>
+		<key>33589424AABE866624349D49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5483CD7C7E01683DA58394CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>830AB586DC122D66C2B6CA26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
