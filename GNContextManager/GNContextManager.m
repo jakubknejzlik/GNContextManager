@@ -96,6 +96,9 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
         if (![persistentStoreCoordinator addPersistentStoreWithType:settings.persistentStoreType configuration:nil URL:settings.persistentStoreUrl options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil] error:&error])
         {
             [[NSFileManager defaultManager] removeItemAtURL:settings.persistentStoreUrl error:nil];
+//            [persistentStoreCoordinator performBlockAndWait:^{
+//                [NSPersistentStoreCoordinator removeUbiquitousContentAndPersistentStoreAtURL:settings.persistentStoreUrl options:settings.persistentStoreOptions error:nil];
+//            }];
             if(self.canResetPersistentStoreOnFail){
                 if (![persistentStoreCoordinator addPersistentStoreWithType:settings.persistentStoreType configuration:settings.persistentStoreConfiguration URL:settings.persistentStoreUrl options:settings.persistentStoreOptions error:&error]){
                     abort();

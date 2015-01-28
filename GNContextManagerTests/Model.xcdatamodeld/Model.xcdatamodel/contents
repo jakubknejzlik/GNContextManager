@@ -10,6 +10,7 @@
         <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="department" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="persons" inverseEntity="Department" syncable="YES"/>
@@ -17,6 +18,6 @@
     <elements>
         <element name="Company" positionX="-63" positionY="-18" width="128" height="73"/>
         <element name="Department" positionX="-54" positionY="-9" width="128" height="88"/>
-        <element name="Person" positionX="-36" positionY="9" width="128" height="88"/>
+        <element name="Person" positionX="-36" positionY="9" width="128" height="105"/>
     </elements>
 </model>
