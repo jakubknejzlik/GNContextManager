@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Jakub Knejzlik" => "jakub.knejzlik@gmail.com" }
   #s.platform     = :ios, "6.0"
-  s.source       = { :git => "https://github.com/jakubknejzlik/GNContextManager.git", :tag => "0.3.3" }
+  s.source       = { :git => "https://github.com/jakubknejzlik/GNContextManager.git", :tag => "0.3.3 " }
   s.source_files  = "GNContextManager/*.{h,m}"
   s.frameworks = "UIKit","CoreData"
   s.requires_arc = true
