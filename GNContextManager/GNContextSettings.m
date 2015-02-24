@@ -11,6 +11,8 @@
 #define DEFAULT_MODEL_NAME @"Model.momd"
 #define DEFAULT_SQLITE_STORE_NAME @"MainDB.sqlite"
 
+#import "GNContextManager.h"
+
 @implementation GNContextSettings
 
 +(instancetype)defaultSettings{
@@ -30,7 +32,11 @@
 
 -(NSString *)managedObjectModelPath{
     if (!_managedObjectModelPath) {
-        _managedObjectModelPath = [[NSBundle mainBundle] pathForResource:[DEFAULT_MODEL_NAME stringByDeletingPathExtension] ofType:[DEFAULT_MODEL_NAME pathExtension]];
+        NSBundle *bundle = [NSBundle mainBundle];
+        if ([[GNContextManager sharedInstance] environment] == GNContextManagerEnvironmentUnitTests) {
+            bundle = [NSBundle bundleForClass:[GNContextManager class]];
+        }
+        _managedObjectModelPath = [bundle pathForResource:[DEFAULT_MODEL_NAME stringByDeletingPathExtension] ofType:[DEFAULT_MODEL_NAME pathExtension]];
     }
     return _managedObjectModelPath;
 }
