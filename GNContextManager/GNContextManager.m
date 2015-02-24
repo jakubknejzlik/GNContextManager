@@ -20,6 +20,10 @@
 @implementation GNContextManager
 CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstance);
 
+-(void)setEnvironment:(GNContextManagerEnvironment)environment{
+    _managedObjectContexts = nil;
+    _environment = environment;
+}
 
 -(NSMutableDictionary *)managedObjectContexts{
     if (!_managedObjectContexts) {
@@ -51,6 +55,10 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 
 
 -(NSManagedObjectContext *)managedObjectContextWithSettings:(GNContextSettings *)settings{
+    if (self.environment == GNContextManagerEnvironmentUnitTests) {
+        settings.persistentStoreType = NSInMemoryStoreType;
+    }
+    
     NSManagedObjectContext *context;
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinatorWithSettings:settings managedObjectModel:[self managedObjectModelWithSettings:settings]];
     if (coordinator != nil)

@@ -12,8 +12,14 @@
 #import "NSManagedObject+GNContextManager.h"
 #import "GNContextSettings.h"
 
+typedef NS_ENUM(NSUInteger, GNContextManagerEnvironment) {
+    GNContextManagerEnvironmentDefault,
+    GNContextManagerEnvironmentUnitTests
+};
+
 @interface GNContextManager : NSObject
 @property BOOL canResetPersistentStoreOnFail;
+@property (nonatomic) GNContextManagerEnvironment environment;
 
 +(instancetype)sharedInstance;
 
