@@ -2,3 +2,4 @@ language: objective-c
 
 xcode_scheme: GNContextManager
 xcode_workspace: GNContextManager.xcworkspace
+xcode_sdk: iphonesimulator
