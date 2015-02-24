@@ -21,13 +21,13 @@
 - (void)setUp
 {
     [super setUp];
+    [[GNContextManager sharedInstance] setEnvironment:GNContextManagerEnvironmentUnitTests];
     GNContextSettings *mainQueueSettings = [GNContextSettings mainQueueDefaultSettings];
     mainQueueSettings.managedObjectModelPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"Model" ofType:@"momd"];
     GNContextSettings *privateQueueSettings = [GNContextSettings privateQueueDefaultSettings];
     privateQueueSettings.managedObjectModelPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"Model" ofType:@"momd"];
     self.mainQueueContext = [[GNContextManager sharedInstance] managedObjectContextWithSettings:mainQueueSettings];
     self.privateQueueContext = [[GNContextManager sharedInstance] managedObjectContextWithSettings:privateQueueSettings];
-
 }
 
 - (void)tearDown

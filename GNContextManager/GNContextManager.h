@@ -14,7 +14,7 @@
 
 typedef NS_ENUM(NSUInteger, GNContextManagerEnvironment) {
     GNContextManagerEnvironmentDefault,
-    GNContextManagerEnvironmentUnitTests
+    GNContextManagerEnvironmentUnitTests //all persistent stores are InMemory
 };
 
 @interface GNContextManager : NSObject

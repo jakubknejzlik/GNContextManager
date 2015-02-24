@@ -22,6 +22,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(GNContextManager, sharedInstanc
 
 -(void)setEnvironment:(GNContextManagerEnvironment)environment{
     _managedObjectContexts = nil;
+    _persistentStoreCoordinators = nil;
+    _managedObjectModels = nil;
     _environment = environment;
 }
 
