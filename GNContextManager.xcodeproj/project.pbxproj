@@ -16,6 +16,7 @@
 		EE31F0661A6FDD430056C927 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = EE31F0651A6FDD430056C927 /* Department.m */; };
 		EE31F0691A6FDD430056C927 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = EE31F0681A6FDD430056C927 /* Company.m */; };
 		EE31F06C1A6FDD440056C927 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EE31F06B1A6FDD440056C927 /* Person.m */; };
+		EEEFCE4F1A9CAF2B009E8BC6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EEEFCE4E1A9CAF2B009E8BC6 /* README.md */; };
 		EEF6A2C919B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
 		EEF6A2D719B6172A00D04F3E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2D619B6172A00D04F3E /* XCTest.framework */; };
 		EEF6A2D819B6172A00D04F3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6A2C819B6172A00D04F3E /* Foundation.framework */; };
@@ -69,6 +70,7 @@
 		EE31F06B1A6FDD440056C927 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		EE31F06D1A6FDD510056C927 /* model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
 		EEEFCE4D1A9CAC95009E8BC6 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		EEEFCE4E1A9CAF2B009E8BC6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EEF6A2C519B6172A00D04F3E /* libGNContextManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGNContextManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF6A2C819B6172A00D04F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEF6A2CC19B6172A00D04F3E /* GNContextManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNContextManager-Prefix.pch"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		EEF6A2BC19B6172A00D04F3E = {
 			isa = PBXGroup;
 			children = (
+				EEEFCE4E1A9CAF2B009E8BC6 /* README.md */,
 				EEEFCE4D1A9CAC95009E8BC6 /* .travis.yml */,
 				EE03D68919EC0A9700F729BB /* GNContextManager.podspec */,
 				EEF6A2CA19B6172A00D04F3E /* GNContextManager */,
@@ -360,6 +363,7 @@
 			files = (
 				EE31F05E1A6FCBA00056C927 /* GNContextSettings.m in Sources */,
 				EE31F05A1A6FCA0B0056C927 /* NSManagedObject+GNContextManager.m in Sources */,
+				EEEFCE4F1A9CAF2B009E8BC6 /* README.md in Sources */,
 				EEF6A2F219B6175B00D04F3E /* GNContextManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
