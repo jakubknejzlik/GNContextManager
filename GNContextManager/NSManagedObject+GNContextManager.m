@@ -150,7 +150,9 @@
 
 
 -(void)mergeChanges:(NSNotification *)notification{
-    [self performSelectorOnMainThread:@selector(mergeChangesFromContextDidSaveNotification:) withObject:notification waitUntilDone:NO];
+    [self performBlockAndWait:^{
+        [self mergeChangesFromContextDidSaveNotification:notification];
+    }];
 }
 
 -(void)deleteAllObjects{
