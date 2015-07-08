@@ -8,6 +8,49 @@
 
 #import <CoreData/CoreData.h>
 
+
+@interface NSManagedObject (GNContextManager)
+
++ (NSArray *)objectsInMainContext;
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate;
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit;
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset;
+
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context;
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate;
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit;
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset;
+
+
+
++ (NSInteger)numberOfObjectsInMainContext;
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate;
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit;
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset;
+
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context;
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate;
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit;
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset;
+
+
++ (instancetype)createInMainContext;
++ (instancetype)createInContext:(NSManagedObjectContext *)context;
+
++ (instancetype)createOrGetInMainContextWithID:(id)ID attributeName:(NSString *)attributeName;
++ (instancetype)createInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName;
+
++ (instancetype)objectInMainContextWithID:(id)ID attributeName:(NSString *)attributeName;
++ (instancetype)objectInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName;
+
+@end
+
+
+
 @interface NSManagedObjectContext (GNContextManager)
 
 -(NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType;

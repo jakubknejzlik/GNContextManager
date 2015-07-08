@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GNContextManager"
-  s.version      = "0.3.6"
+  s.version      = "0.3.7"
   s.summary      = "CoreData helper"
   s.description  = <<-DESC
                    Manager for helping with CoreData stuff

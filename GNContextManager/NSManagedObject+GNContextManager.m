@@ -10,6 +10,111 @@
 
 #import "GNContextManager.h"
 
+
+@implementation NSManagedObject (GNContextManager)
+
++ (NSManagedObjectContext *)mainContext {
+    return [[GNContextManager sharedInstance] mainQueueManagedObjectContext];
+}
+
++ (NSString *)_className {
+    return NSStringFromClass([self class]);
+}
+
++ (NSArray *)objectsInMainContext{
+    return [self objectsInContext:[self mainContext]];
+}
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate{
+    return [self objectsInContext:[self mainContext] withPredicate:predicate];
+}
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors{
+    return [self objectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors];
+}
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit{
+    return [self objectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors limit:limit];
+}
++ (NSArray *)objectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset{
+    return [self objectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors limit:limit offset:offset];
+}
+
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context{
+    return [context objectsWithName:[self _className]];
+}
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate{
+    return [context objectsWithName:[self _className] predicate:predicate];
+}
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors{
+    return [context objectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors];
+}
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit{
+    return [context objectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors limit:limit];
+}
++ (NSArray *)objectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset{
+    return [context objectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors limit:limit offset:offset];
+}
+
+
+
++ (NSInteger)numberOfObjectsInMainContext{
+    return [self numberOfObjectsInContext:[self mainContext]];
+}
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate{
+    return [self numberOfObjectsInContext:[self mainContext] withPredicate:predicate];
+}
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors{
+    return [self numberOfObjectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors];
+}
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit{
+    return [self numberOfObjectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors limit:limit];
+}
++ (NSInteger)numberOfObjectsInMainContextWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset{
+    return [self numberOfObjectsInContext:[self mainContext] withPredicate:predicate sortDescriptors:sortDescriptors limit:limit offset:offset];
+}
+
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context{
+    return [context numberOfObjectsWithName:[self _className]];
+}
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate{
+    return [context numberOfObjectsWithName:[self _className] predicate:predicate];
+}
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors{
+    return [context numberOfObjectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors];
+}
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit{
+    return [context numberOfObjectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors limit:limit];
+}
++ (NSInteger)numberOfObjectsInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors limit:(NSUInteger)limit offset:(NSUInteger)offset{
+    return [context numberOfObjectsWithName:[self _className] predicate:predicate sortDescriptors:sortDescriptors limit:limit offset:offset];
+}
+
+
++ (instancetype)createInMainContext{
+    return [self createInContext:[self mainContext]];
+}
++ (instancetype)createInContext:(NSManagedObjectContext *)context{
+    return [context createObjectWithName:[self _className]];
+}
+
++ (instancetype)createOrGetInMainContextWithID:(id)ID attributeName:(NSString *)attributeName{
+    return [self createInContext:[self mainContext] withID:ID attributeName:attributeName];
+}
++ (instancetype)createInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName{
+    return [context createOrGetObjectWithName:[self _className] ID:ID attributeName:attributeName];
+}
+
+
++ (instancetype)objectInMainContextWithID:(id)ID attributeName:(NSString *)attributeName{
+    return [self objectInContext:[self mainContext] withID:ID attributeName:attributeName];
+}
++ (instancetype)objectInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName{
+    return [context objectWithName:[self _className] ID:ID attributeName:attributeName];
+}
+
+@end
+
+
+
+
 @implementation NSManagedObjectContext (GNContextManager)
 
 -(NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType{

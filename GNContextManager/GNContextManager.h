@@ -24,8 +24,15 @@ typedef NS_ENUM(NSUInteger, GNContextManagerEnvironment) {
 +(instancetype)sharedInstance;
 
 
+/**
+ * context returned from this method is automaticaly strongly referenced so won't get dealloced
+ */
 -(NSManagedObjectContext *)mainQueueManagedObjectContext;
 
+
+/**
+ * make sure you hold reference to context returned from this method, not strongly referenced
+ */
 -(NSManagedObjectContext *)managedObjectContextWithSettings:(GNContextSettings *)settings;
 
 
