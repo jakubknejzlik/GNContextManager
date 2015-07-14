@@ -210,6 +210,15 @@
 }
 
 
+- (BOOL)saveToPersistentStore:(NSError **)error{
+    BOOL saved = [self save:error];
+    if (!saved) return NO;
+    if (self.parentContext) {
+        return [self.parentContext saveToPersistentStore:error];
+    }
+    return saved;
+}
+
 
 +(BOOL)saveDataInContext:(void(^)(NSManagedObjectContext *context))saveBlock error:(NSError *__autoreleasing *)error{
     BOOL success = YES;

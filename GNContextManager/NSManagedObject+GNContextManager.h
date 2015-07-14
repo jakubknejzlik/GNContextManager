@@ -78,6 +78,8 @@
 -(id)objectWithName:(NSString *)entityName ID:(id)ID attributeName:(NSString *)attributeName;
 -(id)createOrGetObjectWithName:(NSString *)entityName ID:(id)ID attributeName:(NSString *)attributeName;
 
+- (BOOL)saveToPersistentStore:(NSError **)error;
+
 +(BOOL)saveDataInContext:(void(^)(NSManagedObjectContext *context))saveBlock error:(NSError **)error;
 +(void)saveDataInBackgroundContext:(void(^)(NSManagedObjectContext *context))saveBlock completion:(void(^)(NSError *error))completion;
 
