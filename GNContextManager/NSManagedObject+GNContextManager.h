@@ -41,6 +41,7 @@
 + (instancetype)createInMainContext;
 + (instancetype)createInContext:(NSManagedObjectContext *)context;
 
++ (instancetype)createOrGetInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName;
 + (instancetype)createOrGetInMainContextWithID:(id)ID attributeName:(NSString *)attributeName;
 + (instancetype)createInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName;
 

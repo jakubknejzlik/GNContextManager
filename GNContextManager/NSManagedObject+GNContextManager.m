@@ -95,6 +95,9 @@
     return [context createObjectWithName:[self _className]];
 }
 
++ (instancetype)createOrGetInContext:(NSManagedObjectContext *)context withID:(id)ID attributeName:(NSString *)attributeName{
+    return [self createInContext:context withID:ID attributeName:attributeName];
+}
 + (instancetype)createOrGetInMainContextWithID:(id)ID attributeName:(NSString *)attributeName{
     return [self createInContext:[self mainContext] withID:ID attributeName:attributeName];
 }
