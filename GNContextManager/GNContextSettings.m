@@ -44,7 +44,11 @@
 
 -(NSURL *)persistentStoreUrl{
     if (!_persistentStoreUrl) {
+#if TARGET_OS_TV
+        _persistentStoreUrl = [NSURL fileURLWithPath:[[self cachesDirectoryPath] stringByAppendingPathComponent:DEFAULT_SQLITE_STORE_NAME]];
+#else
         _persistentStoreUrl = [NSURL fileURLWithPath:[[self documentsDirectoryPath] stringByAppendingPathComponent:DEFAULT_SQLITE_STORE_NAME]];
+#endif
     }
     return _persistentStoreUrl;
 }
@@ -68,6 +72,10 @@
 - (NSString *)documentsDirectoryPath
 {
     return [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] relativePath];
+}
+- (NSString *)cachesDirectoryPath
+{
+    return [[[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject] relativePath];
 }
 
 @end
